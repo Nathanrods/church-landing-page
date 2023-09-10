@@ -1,6 +1,6 @@
 <?php
 session_start();
-include('conexao.php');	
+include('banco.php');	
 $msg ="";
 $msgcor ="";
 unset($_SESSION['CPF']);
@@ -24,7 +24,7 @@ if (isset($_POST['CPF']) || isset($_POST['Senha'])) {
 		$quantidade = $sql_query->num_rows;
 
 		if($quantidade == 1){
-			header("Location: painel.php");
+			header("Location: index_admin.php");
 			exit();
 		} else {
 			$msg = "Não foi possivel fazer login, informe CPF ou senha corretamente";
